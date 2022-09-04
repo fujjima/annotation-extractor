@@ -1,0 +1,12 @@
+{
+  "name": "annotation-extractor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fujjima/annotation-extractor.git",
+  "author": "katsuimasato",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^9.4.0",
+    "jquery": "^3.6.1"
+  }
+}
