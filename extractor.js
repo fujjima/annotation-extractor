@@ -29,7 +29,8 @@ let siblings = Array.from(h2Item.parentNode.children).filter(element => {
 });
 
 
-const toTextStrings = (nodeLists) => {
+// TODO: row by-dateの出力
+const convertNodeToText = (nodeLists) => {
   const text = nodeLists.reduce((prev, node, idx) => {
     // note部分
     if (node.classList.contains('row') && node.classList.contains('with-border')) {
@@ -41,7 +42,6 @@ const toTextStrings = (nodeLists) => {
       // h2要素
       return prev.concat(`\n## ${node.textContent.replace(/\r?\n/g, '')}\n\n`)
     } else {
-      // TODO: ページ部分の対応について
       return prev
     }
   }, '')
@@ -59,7 +59,7 @@ siblings.reduce((acc, item, idx) => {
 }, [])
 
 let output = devidedArray.reduce((prev, elements) => {
-  return prev.concat(toTextStrings(elements))
+  return prev.concat(convertNodeToText(elements))
 }, '')
 
 
